@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Session Hold",
+    "version": "0.0.1",
+
+    "description": "Save a browsing session for later.",
+    "homepage_url": "https://github.com/Stevox404/session-hold",
+    "icons": {
+        "48": "icons/save-icon-48.png",
+        "96": "icons/save-icon-96.png"
+    },
+
+    "permissions": [
+        "bookmarks",
+        "tabs"
+    ],
+
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": "icons/save-icon-96.png",
+        "default_title": "Session Hold",
+        "default_popup": "popup/index.html"
+    }
+}
