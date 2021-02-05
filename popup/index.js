@@ -5,9 +5,9 @@ var currentPg = homePg;
 
 var restoreList = restorePg.querySelector('#sessions-list');
 
-var closeOnSaveChk = homePg.querySelector('input#close-chk');
-var restoreInNewChk = homePg.querySelector('input#new-session');
-var delOnRestoreChk = homePg.querySelector('input#del-session');
+var closeOnSaveChk = savePg.querySelector('input#close-chk');
+var restoreInNewChk = restorePg.querySelector('input#new-session');
+var delOnRestoreChk = restorePg.querySelector('input#del-session');
 
 populateRestoreList().then(function () {
 }).catch(console.error);
@@ -105,15 +105,19 @@ function saveSession() {
     function closeTabs({ tabs }) {
         return new Promise(function (resolve, reject) {
             populateRestoreList().then(function () {
-                changePage(homePg);
-                resolve();
-                return;
-                var i = 0, l = tabs.length;
-                var tabIds = [];
-                for (; i < l; i++) {
-                    tabIds.push(tabs[i].id);
+                if(closeOnSaveChk.checked){
+                    var i = 0, l = tabs.length;
+                    var tabIds = [];
+                    for (; i < l; i++) {
+                        tabIds.push(tabs[i].id);
+                    }
+                    browser.tabs.create().then(function () {
+                        browser.tabs.remove(tabIds).then(resolve);
+                    });
+                } else {
+                    changePage(homePg);
+                    resolve();
                 }
-                browser.tabs.remove(tabIds);
             }).catch(reject);
         });
     }
