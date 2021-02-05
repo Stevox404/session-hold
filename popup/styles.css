@@ -1,0 +1,71 @@
+.page {
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+}
+#home {
+    align-items:center;
+}
+#save {
+    display: none;
+}
+#restore {
+    display: none;
+}
+
+.divider {
+    width:90%;
+    height:2px;
+    background-color: rgba(0,0,0,.12);
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+}
+.top-bar>h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+#logo>img {
+    width: 248px;
+    text-align: center;
+}
+
+#actions {
+    display:flex;
+    padding: 10px 0px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+#save-actions {
+    display:flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+#sessions-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.restore-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 6px;
+}
+.restore-item:hover {
+    background-color: rgba(0,0,0,.08);
+}
+.restore-item span {
+    pointer-events: none;
+}
+.restore-item i {
+    pointer-events: none;
+}

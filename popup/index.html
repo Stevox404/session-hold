@@ -5,13 +5,14 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../assets/material.min.css">
     <link rel="stylesheet" href="../assets/material.min.css.map">
+    <link rel="stylesheet" href="styles.css">
     <script src="../assets/material.min.js"></script>
     <script src="../assets/material.min.js.map"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body>
-    <div id="popup-home" >
+<body style="width: 264px; height: 360px;">
+    <div id="home" class="page">
         <div id="logo">
             <img src="/images/header.png" alt="Session Hold">
         </div>
@@ -19,23 +20,77 @@
             Save current browsing session for later
         </div>
 
-        <div style="width:90%; height:2px; background-color: rgba(0,0,0,.12);"></div>
+        <div class="divider"></div>
 
-        <div id="controls" >
-            <button 
-                id="save-btn" 
-                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored"
-            >
+        <div id="actions">
+            <button id="save-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                 Save Session
             </button>
-            <button 
-                id="restore-btn" 
-                class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored mdl-button--accent"
-            >
+            <button id="restore-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                 Restore Session
             </button>
         </div>
     </div>
+
+    <!-- Save Page -->
+    <div id="save" class="page">
+        <div class="top-bar" >
+            <button id="back-btn" class = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class = "material-icons">keyboard_arrow_left</i>
+            </button>
+            <h2>Save Session</h2>
+        </div>
+        <div class="divider"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label for="sesh-lbl" class="mdl-textfield__label">Label</label>
+            <input type="text" name="label" id="sesh-lbl" class="mdl-textfield__input" />
+        </div>
+        <div>
+            <label for="close-chk" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkbox__label">
+                <input type="checkbox" name="do-close" id="close-chk" checked class="mdl-checkbox__input" />
+                <span>
+                    Close current session on save
+                </span>
+            </label>
+        </div>
+
+        <div id="save-actions">
+            <button id="do-save-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" >
+                Save
+            </button>
+        </div>
+    </div>
+
+    <!-- Restore Page -->
+    <div id="restore" class="page">
+        <div class="top-bar" >
+            <button id="back-btn" class = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                <i class = "material-icons">keyboard_arrow_left</i>
+            </button>
+            <h2>Restore Session</h2>
+        </div>
+        <div class="divider"></div>
+        <div id="sessions-list" >
+            <span>No saved sessions</span>
+        </div>
+        <div>
+            <label for="new-session" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkbox__label">
+                <input type="checkbox" name="new-session" id="new-session" checked class="mdl-checkbox__input" />
+                <span>
+                    Open session in new window
+                </span>
+            </label>
+        </div>
+        <div>
+            <label for="del-session" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-checkbox__label">
+                <input type="checkbox" name="del-session" id="del-session" checked class="mdl-checkbox__input" />
+                <span>
+                    Delete session on restore
+                </span>
+            </label>
+        </div>
+    </div>
+
     <script src="./index.js"></script>
 </body>
 
