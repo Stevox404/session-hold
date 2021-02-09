@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Session Hold",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Save a browsing session for later.",
     "homepage_url": "https://github.com/Stevox404/session-hold",
     "icons": {
